@@ -1,13 +1,21 @@
 {
   "name": "discord-turtle",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "discord-turtle",
+    "turtle",
+    "discord",
+    "d.js",
+    "discord-docs",
+    "discord.js-docs",
+    "discord-bot"
+  ],
+  "author": "Turtlepaw#0001",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.20.0",

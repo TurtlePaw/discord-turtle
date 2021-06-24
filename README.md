@@ -32,6 +32,6 @@ Make sure you have `discord.js` installed!
     const docsembed = new Discord.MessageEmbed(docs);
     message.channel.send(docsembed);
 ```
-![D.js Docs Gif]()
+![D.js Docs Gif](https://cdn.tixte.com/uploads/turtlepaw.is-from.space/kqabjya4e9a.gif)
 
 # **For errors and questions join [our support server](https://discord.gg/CTuX7qPPge)**

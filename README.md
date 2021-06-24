@@ -1,7 +1,7 @@
 <div align="center">
   <p>
-    <a href="https://nodei.co/npm/
-/"><img src="https://nodei.co/npm/discord.js.png?downloads=true&stars=true" alt="NPM Info" /></a>
+    <a href="https://nodei.co/npm/discord-turtle
+/"><img src="https://nodei.co/npm/discord-turtle.png?downloads=true&stars=true" alt="NPM Info" /></a>
   </p>
 </div>
 

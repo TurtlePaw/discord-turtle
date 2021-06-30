@@ -6,15 +6,16 @@
 </div>
 
 <div align="center">
- <p>For errors and questions join <a href="https://discord.gg/YUTUSKQbm5">our support server</a></p>
+ <p>For errors and questions join <a href="https://discord.gg/5Wutrs8s4s">our support server</a></p>
 </div>
 
 ## Table Of Content
 
 - [Installation](#installation)
 - [Examples](#examples)
-- [Discord.js Docs](#Discord.jsDocs)
-- [Support Server](https://discord.gg/CTuX7qPPge)
+- [Discord.js Docs](#discordjs-docs)
+- [Timestamps](#Timestamps)
+- [Support Server](https://discord.gg/5Wutrs8s4s)
 
 # Installation
 ```
@@ -34,4 +35,15 @@ Make sure you have `discord.js` installed!
 ```
 ![D.js Docs Gif](https://cdn.tixte.com/uploads/turtlepaw.is-from.space/kqabjya4e9a.gif)
 
-# **For errors and questions join [our support server](https://discord.gg/CTuX7qPPge)**
+## Timestamps
+```
+const Discord = require("discord.js");
+const dt = require('discord-turtle');
+
+//Converting to timestamp
+const time = await dt.timestamp(1625021700);
+//Sending the time
+message.channel.send(time);
+```
+![Timestamps Gif](https://cdn.tixte.com/uploads/turtlepaw.is-from.space/kqiw9knk59a.gif)
+# **For errors and questions join [our support server](https://discord.gg/5Wutrs8s4s)**

@@ -1,6 +1,6 @@
 {
   "name": "discord-turtle",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -19,7 +19,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.20.0",
-    "discord.js": "^13.0.0-dev.1816a93b1b1b2bae47e8651e76fa53699de8421d",
+    "discord.js": "^13.0.0-dev.0d0c8f07f2535dd315ca95abe35e848c13d0ddf5",
     "node-fetch": "^2.6.1"
   }
 }

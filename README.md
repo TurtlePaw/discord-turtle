@@ -15,6 +15,8 @@
 - [Examples](#examples)
 - [Discord.js Docs](#discordjs-docs)
 - [Timestamps](#Timestamps)
+- [Links](#link)
+- [Magik](#magik)
 - [Support Server](https://discord.gg/5Wutrs8s4s)
 
 # Installation
@@ -46,4 +48,24 @@ const time = await dt.timestamp(1625021700);
 message.channel.send(time);
 ```
 ![Timestamps Gif](https://cdn.tixte.com/uploads/turtlepaw.is-from.space/kqiw9knk59a.gif)
+## Link
+__You must be on Discord.js V13__
+```
+new dt.linkbutton({
+    link: 'https://discord.com',
+    label: 'Discord'
+}).create().then(button => {
+   <channel>.send({ content: 'Hey!', components: [[button]] })
+})
+```
+## Magik
+```
+const dt = require('discord-turtle');
+new dt.magik({
+    mentions: <message>.mentions,
+    author: <message>.author
+}).create().then(button => {
+    <channel>.send({ embeds: [button.embed.setColor('BLURPLE')] })
+})
+```
 # **For errors and questions join [our support server](https://discord.gg/5Wutrs8s4s)**

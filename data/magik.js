@@ -1,11 +1,27 @@
-module.exports = async (message) => {
-    if(!message) throw new TypeError('DT Error: Missing argument message')
+const Discord = require('discord.js');
+const get = require('node-fetch');
 
-    const get = require('node-fetch');
-    const Discord = require('discord.js');
+class magik {
+
+    /**
+     * @name magik
+     * @kind constructor
+     * @param {Object} options options
+     * @param {Object} [options.mentions] The message mentions
+     * @param {Object} [options.author] The author of the message
+     */
+
+    constructor(options) {
+        if(!options.mentions) throw new TypeError('DT Error: Missing argument mentions')
+
+        if(!options.author) throw new TypeError('DT Error: Missing argument author')
+
+        this.options = options
+    }
+    async create() {
 
     let numb = Math.ceil(Math.random() * 10)
-    let user = message.mentions.users.first() ? message.mentions.users.first().displayAvatarURL({format: 'png', size: 512}) : message.author.displayAvatarURL({format: 'png', size: 512});
+    let user = this.options.mentions.users.first() ? this.options.mentions.users.first().displayAvatarURL({format: 'png', size: 512}) : this.options.author.displayAvatarURL({format: 'png', size: 512});
 
     const httpsreq = 'https://nekobot.xyz/api/imagegen?type=magik&image=' + user + '&intensity=' + numb;
     
@@ -15,13 +31,12 @@ module.exports = async (message) => {
 
     let embed = new Discord.MessageEmbed()
     .setImage(data.message)
-    let btn = new Discord.MessageButton()
-    .setCustomID('deletemsg')
-    .setLabel('🗑 Delete')
-    .setStyle('DANGER')
-    //components: [[button]]
-    const rarray = [];
-    rarray.push(embed);
-    rarray.push(btn)
-    return rarray;
+    const data2 = {
+        link: data.message,
+        embed: embed
+    }
+    return data2;
+    }
 }
+
+module.exports = magik

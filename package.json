@@ -19,7 +19,10 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.20.0",
+    "chalk": "^4.1.1",
+    "cheerio": "^1.0.0-rc.10",
     "discord.js": "^13.0.0-dev.755c180.1625659372",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.1",
+    "string-width": "^5.0.0"
   }
 }

@@ -1,3 +1,4 @@
+> Discord Turtle is a package that can do lots of stuff, like embed pages!
 <div align="center">
   <p>
     <a href="https://nodei.co/npm/discord-turtle
@@ -25,6 +26,8 @@
 $ npm i discord-turtle
 ```
 Make sure you have `discord.js` installed!
+
+> To install discord V13 do `npm i discord.js@dev`
 
 # Examples
 ## Discord.js Docs

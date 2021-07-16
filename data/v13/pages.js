@@ -22,7 +22,6 @@ class pages {
         if(!options.message) throw new TypeError(`DT Error: Missing argument message`)
         if(!options.style) throw new TypeError(`DT Error: Missing argument style`)
         if(!options.emoji) throw new TypeError(`DT Error: Missing argument emoji`)
-        if(!options.pages) throw new TypeError(`DT Error: Missing argument pages`)
 
         this.style = options.style;
         this.time = options.time || 150000;
@@ -34,10 +33,68 @@ class pages {
         this.pages = options.pages;
     }
     /**
+     * @param {Array} pages The pages to add
+     */
+    async addPages(pages){
+        this.pages.push(pages)
+    }
+    /**
+     * @param {Array} pages The pages for the embeds
+     */
+    async setPages(pages){
+        this.pages = new Array(pages)
+    }
+    /**
+     * Sends all the pages
+     * @returns Pages
+     */
+    buildAll() {
+        this.options.message.channel.send({ embeds: this.pages });
+        return this.pages
+    }
+    /**
+     * Set the page colors
+     * @param {Discord.ColorResolvable} color The color for the embeds
+     * @returns Color
+     */
+    setColor(color) {
+        for(const page of this.pages){
+            page.setColor(color)
+        }
+        return color
+    }
+    /**
+     * Set the page authors
+     * @param {String} author The author
+     * @param {String} img The img
+     * @param {String} url The url
+     * @returns Author
+     */
+    setAuthor(author, img = null, url = null){
+        for(const page of this.pages){
+            page.setAuthor(author, img, url)
+        }
+        return author
+    }
+    /**
+     * 
+     * @param {String} footer The embeds footer text 
+     * @param {String} img The embeds footer img
+     * @returns Footer
+     */
+    setFooter(footer, img){
+        for(const page of this.pages){
+            page.setFooter(footer, img)
+        }
+        return footer
+    }
+    /**
      * @description Builds the embeds and sends the message
      * @returns Promise<void>
      */
     async build() {
+        if(!this.options.pages) throw new TypeError(`DT Error: Missing argument pages`)
+
         const button_1 = new MessageButton()
         .setStyle(this.style)
         .setEmoji(this.emoji.e1)

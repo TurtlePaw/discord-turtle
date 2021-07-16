@@ -12,6 +12,7 @@ module.exports.timestamp = require(`./data/v12/timestamp`);
 module.exports.magik = require('./data/magik');
 if(version === 13){
 module.exports.linkbutton = require(`./data/v13/linkbutton`);
+module.exports.pages = require('./data/v13/pages');
 }
 
 //module.exports = (client) => {}

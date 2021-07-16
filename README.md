@@ -27,7 +27,7 @@ Make sure you have `discord.js` installed!
 
 # Examples
 ## Discord.js Docs
-```
+```js
     const Discord = require("discord.js");
     const dt = require('discord-turtle');
 
@@ -38,7 +38,7 @@ Make sure you have `discord.js` installed!
 ![D.js Docs Gif](https://cdn.tixte.com/uploads/turtlepaw.is-from.space/kqabjya4e9a.gif)
 
 ## Timestamps
-```
+```js
 const Discord = require("discord.js");
 const dt = require('discord-turtle');
 
@@ -50,16 +50,17 @@ message.channel.send(time);
 ![Timestamps Gif](https://cdn.tixte.com/uploads/turtlepaw.is-from.space/kqiw9knk59a.gif)
 ## Link
 __You must be on Discord.js V13__
-```
+```js
 new dt.linkbutton({
     link: 'https://discord.com',
-    label: 'Discord'
+    label: 'Discord.com'
 }).create().then(button => {
    <channel>.send({ content: 'Hey!', components: [[button]] })
 })
 ```
+![Link Buttons](https://cdn.tixte.com/uploads/turtlepaw.is-from.space/kr5kr47b99a.png)
 ## Magik
-```
+```js
 const dt = require('discord-turtle');
 new dt.magik({
     mentions: <message>.mentions,
@@ -68,4 +69,22 @@ new dt.magik({
     <channel>.send({ embeds: [button.embed.setColor('BLURPLE')] })
 })
 ```
+![Magik](https://cdn.tixte.com/uploads/turtlepaw.is-from.space/kr5kse1vx9a.png)
+## Pages
+__You must be on Discord.js V13__
+```js
+const Discord = require("discord.js");
+const dt = require('discord-turtle');
+const page_1 = new Discord.MessageEmbed()
+.setTitle('Page 1')
+const page_2 = new Discord.MessageEmbed()
+.setTitle('Page 2')
+new dt.pages({
+    pages: [page_1, page_2],
+    emoji: ['emojiid', 'emojiid', 'emojiid'],
+    message: message,
+    style: 'SECONDARY'
+}).build();
+```
+![Pages](https://cdn.tixte.com/uploads/turtlepaw.is-from.space/kr5kkhrz19a.gif)
 # **For errors and questions join [our support server](https://discord.gg/5Wutrs8s4s)**

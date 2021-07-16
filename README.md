@@ -17,6 +17,7 @@
 - [Timestamps](#Timestamps)
 - [Links](#link)
 - [Magik](#magik)
+- [Pages](#pages)
 - [Support Server](https://discord.gg/5Wutrs8s4s)
 
 # Installation

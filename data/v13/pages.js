@@ -93,7 +93,7 @@ class pages {
      */
     async build() {
         if(!this.options.pages) throw new TypeError(`DT Error: Missing argument pages`)
-        console.log(this.options.pages)
+        
         const button_1 = new MessageButton()
         .setStyle(this.style)
         .setEmoji(this.emoji.e1)

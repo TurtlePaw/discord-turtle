@@ -30,27 +30,26 @@ class pages {
             e2: options.emoji[1],
             e3: options.emoji[2]
         }
-        this.pages = options.pages;
     }
     /**
      * @param {Array} pages The pages to add
      */
     async addPages(pages){
-        this.pages.push(pages)
+        this.options.pages.push(pages)
     }
     /**
      * @param {Array} pages The pages for the embeds
      */
     async setPages(pages){
-        this.pages = new Array(pages)
+        this.options.pages = new Array(pages)
     }
     /**
      * Sends all the pages
      * @returns Pages
      */
     buildAll() {
-        this.options.message.channel.send({ embeds: this.pages });
-        return this.pages
+        this.options.message.channel.send({ embeds: this.options.pages });
+        return this.options.pages
     }
     /**
      * Set the page colors
@@ -58,7 +57,7 @@ class pages {
      * @returns Color
      */
     setColor(color) {
-        for(const page of this.pages){
+        for(const page of this.options.pages){
             page.setColor(color)
         }
         return color
@@ -71,7 +70,7 @@ class pages {
      * @returns Author
      */
     setAuthor(author, img = null, url = null){
-        for(const page of this.pages){
+        for(const page of this.options.pages){
             page.setAuthor(author, img, url)
         }
         return author
@@ -83,7 +82,7 @@ class pages {
      * @returns Footer
      */
     setFooter(footer, img){
-        for(const page of this.pages){
+        for(const page of this.options.pages){
             page.setFooter(footer, img)
         }
         return footer
@@ -94,7 +93,7 @@ class pages {
      */
     async build() {
         if(!this.options.pages) throw new TypeError(`DT Error: Missing argument pages`)
-
+        console.log(this.options.pages)
         const button_1 = new MessageButton()
         .setStyle(this.style)
         .setEmoji(this.emoji.e1)
@@ -110,7 +109,7 @@ class pages {
         const buttons = new MessageActionRow()
         .addComponents(button_1, button_2, button_3);
 
-        const m = await this.message.channel.send({ embeds: [this.pages[0]], components: [buttons] });
+        const m = await this.message.channel.send({ embeds: [this.options.pages[0]], components: [buttons] });
 
         const filter = i => i.user.id === this.message.author.id;
 
@@ -122,7 +121,7 @@ class pages {
             let req = false;
             if(i.customId === 'page_next'){
                 req = true;
-                if(currentPage + 1 == this.pages.length){
+                if(currentPage + 1 == this.options.pages.length){
                     currentPage = 0;
                 } else{
                     currentPage += 1;
@@ -130,7 +129,7 @@ class pages {
             } else if(i.customId === 'page_back'){
                 req = true;
                 if(currentPage - 1 < 0){
-                    currentPage = this.pages.length - 1
+                    currentPage = this.options.pages.length - 1
                 } else{
                     currentPage -= 1;
                 }
@@ -139,7 +138,7 @@ class pages {
                 return m.delete()
             }
             if(req === true){
-            m.edit({ embeds: [this.pages[currentPage]], components: [buttons] }).catch(( )=>{ });
+            m.edit({ embeds: [this.options.pages[currentPage]], components: [buttons] }).catch(( )=>{ });
             i.deferUpdate();
             }
         })

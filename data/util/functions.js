@@ -6,6 +6,13 @@ const words = require('../../words.json');
 const { boxConsole } = require('./boxConsole');
 
 module.exports = {
+	fixCase: function(text) {
+		text = text.toString()
+		let newtext = text.slice(1, text.length)
+		let oldtext = text.slice(0, 1)
+		let rettext = oldtext.toUpperCase() + newtext
+		return rettext;
+	},
 	fetchhtml: async function(url) {
 		const options = {
 			header: {

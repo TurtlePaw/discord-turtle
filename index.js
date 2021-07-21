@@ -11,6 +11,7 @@ module.exports.docs = require(`./data/v12/djs-docs`);
 module.exports.timestamp = require(`./data/v12/timestamp`);
 module.exports.magik = require('./data/magik');
 if(version === 13){
+module.exports.rps = require('./data/v13/rps');
 module.exports.linkbutton = require(`./data/v13/linkbutton`);
 module.exports.pages = require('./data/v13/pages');
 }

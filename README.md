@@ -19,6 +19,7 @@
 - [Links](#link)
 - [Magik](#magik)
 - [Pages](#pages)
+- [RPS](#rps)
 - [Support Server](https://discord.gg/5Wutrs8s4s)
 
 # Installation
@@ -91,4 +92,14 @@ new dt.pages({
 }).build();
 ```
 ![Pages](https://cdn.tixte.com/uploads/turtlepaw.is-from.space/kr5kkhrz19a.gif)
+## RPS
+__You must be on Discord.js V13__
+```js
+const dt = require('discord-turtle');
+
+const rpsgame = new dt.rps();
+rpsgame.setMessage(message)
+rpsgame.start();
+```
+![RPS](https://cdn.tixte.com/uploads/turtlepaw.is-from.space/krcqn39yr9a.gif)
 # **For errors and questions join [our support server](https://discord.gg/5Wutrs8s4s)**

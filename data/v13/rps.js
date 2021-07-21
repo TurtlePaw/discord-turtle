@@ -70,6 +70,14 @@ class rps {
         if(typeof data !== 'object') throw new TypeError('DT Error: Data must be an object')
         this.emojis = data
     }
+    /**
+     * Set the tie message for the game!
+     * @param {String} data The tie message
+     */
+    setTie(data){
+        if(!data) throw new TypeError('DT Error: Missing arguments data')
+        this.tie = data.toString()
+    }
     _render(){
         this.win = this.win.replace('{{user}}', this.message.author)
         this.lost = this.lost.replace('{{user}}', this.message.author)

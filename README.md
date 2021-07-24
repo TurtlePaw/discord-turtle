@@ -1,4 +1,6 @@
 > Discord Turtle is a package that can do lots of stuff, like embed pages!
+
+
 <div align="center">
   <p>
     <a href="https://nodei.co/npm/discord-turtle
@@ -26,9 +28,10 @@
 ```
 $ npm i discord-turtle
 ```
+
 Make sure you have `discord.js` installed!
 
-> To install discord V13 do `npm i discord.js@dev`
+> To install Discord V13 do `npm i discord.js@dev`
 
 # Examples
 ## Discord.js Docs
@@ -44,25 +47,13 @@ Make sure you have `discord.js` installed!
 
 ## Timestamps
 ```js
-const Discord = require("discord.js");
 const dt = require('discord-turtle');
 
-//Converting to timestamp
-const time = await dt.timestamp(1625021700);
-//Sending the time
-message.channel.send(time);
+const time = new dt.timestamp()
+time.setStyle('f')
+message.channel.send({ content: time.toTimestamp() });
 ```
 ![Timestamps Gif](https://cdn.tixte.com/uploads/turtlepaw.is-from.space/kqiw9knk59a.gif)
-## Link
-__You must be on Discord.js V13__
-```js
-new dt.linkbutton({
-    link: 'https://discord.com',
-    label: 'Discord.com'
-}).create().then(button => {
-   <channel>.send({ content: 'Hey!', components: [[button]] })
-})
-```
 ![Link Buttons](https://cdn.tixte.com/uploads/turtlepaw.is-from.space/kr5kr47b99a.png)
 ## Magik
 ```js
@@ -75,6 +66,17 @@ new dt.magik({
 })
 ```
 ![Magik](https://cdn.tixte.com/uploads/turtlepaw.is-from.space/kr5kse1vx9a.png)
+# V13 Examples
+## Link
+__You must be on Discord.js V13__
+```js
+new dt.linkbutton({
+    link: 'https://discord.com',
+    label: 'Discord.com'
+}).create().then(button => {
+   <channel>.send({ content: 'Hey!', components: [[button]] })
+})
+```
 ## Pages
 __You must be on Discord.js V13__
 ```js

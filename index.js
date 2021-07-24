@@ -8,7 +8,7 @@ if (version < 12) {
     throw new Error('The discord.js version must be v12 or higher');
 }
 module.exports.docs = require(`./data/v12/djs-docs`);
-module.exports.timestamp = require(`./data/v12/timestamp`);
+module.exports.timestamp = require(`./data/v13/timestamp`);
 module.exports.magik = require('./data/magik');
 if(version === 13){
 module.exports.rps = require('./data/v13/rps');

@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 
 class rps {
-    constructor(options){
+    constructor(){
         this.emojis = {
             rock: '🪨',
             paper: '📄',

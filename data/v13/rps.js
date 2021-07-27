@@ -7,6 +7,7 @@ class rps {
             paper: '📄',
             scissors: '✂️'
         }
+        this.gameMessage = 'You chose {{c1}}. I choose {{c2}}.  \n{{cw}} wins!'
         this.win = '{{user}} won the game!'
         this.lost = 'Maybe next time {{user}}! :('
         this.loadm = 'Thinking...'
@@ -29,6 +30,18 @@ class rps {
     setStyle(style){
         if(!style) throw new TypeError('DT Error: Missing argument style')
         this.style = style;
+    }
+    /**
+     * Set the game message ( {{c1}}, {{c2}} and {{cw}} can be used )
+     * • {{c1}} The authors choice
+     * • {{c2}} The bots choice
+     * • {{cw}} The correct choice
+     * @param {String} message 
+     */
+    setGameMessage(message){
+        if(!message) throw new TypeError('DT Error: Missing argument message')
+        if(typeof message !== 'string') throw new TypeError('DT Error: message must be a string')
+        this.gameMessage = message.toString();
     }
     /**
      * Set the lost message
@@ -145,16 +158,21 @@ class rps {
         let tie;
         m.awaitMessageComponent({ filter, time: 60000 })
         .then(async i => {
-            m.edit({ content: `${message.author} Chooses ${require('../util/functions').fixCase(i.customId)}\nI choose ${require('../util/functions').fixCase(correct_a)}`, components: [] })
             const correct_c = this._checkWinner(i.customId, correct_a);
+            let whatWon = String;
+            if(correct_c.author_won === true) whatWon = require('../util/functions').fixCase(i.customId) + 'Wins!'
+            else if(correct_c.tie === true) whatWon = 'Nothing won!'
+            else whatWon = require('../util/functions').fixCase(correct_a) + 'Wins!'
+            this.gameMessage = this.gameMessage.replace('{{c1}}', require('../util/functions').fixCase(i.customId)).replace('{{c2}}', require('../util/functions').fixCase(correct_a)).replace('{{cw}}', require('../util/functions').fixCase(whatWon))
+            i.update({ content: this.gameMessage, components: [] })
             if(correct_c.author_won === true){
-                i.reply({ content: this.win, components: [] });
+                i.followUp({ content: this.win, components: [] });
                 won = true
             } else if(correct_c.tie === true){
-                i.reply({ content: this.tie, components: [] });
+                i.followUp({ content: this.tie, components: [] });
                 tie = true
             } else {
-                i.reply({ content: this.lost, components: [] });
+                i.followUp({ content: this.lost, components: [] });
                 won = false
             }
         }).catch(( )=>{ m.edit({ embeds: [ENDED_EMBED], components: [] })})

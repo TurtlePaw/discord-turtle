@@ -24,6 +24,13 @@ module.exports = {
 		const html = await axios.get(url, options);
 		return cheerio.load(html.data);
 	},
+	getRandomNumber: function(length, max) {
+		const numbers = '';
+		for (let i = 0; i > length; i++) {
+			numbers = numbers+Math.floor(Math.random() * max).toString()
+		}
+		return numbers
+	},
 	getRandomString: function(length) {
 		const randomChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
 		let result = '';

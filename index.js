@@ -18,6 +18,7 @@ module.exports.buttonRole = require('./data/v13/buttonRoles');
 module.exports.rps = require('./data/v13/rps');
 module.exports.linkbutton = require(`./data/v13/linkbutton`);
 module.exports.pages = require('./data/v13/pages');
+module.exports.captcha = require('./data/v13/captcha')
 }
 
 //module.exports = (client) => {}

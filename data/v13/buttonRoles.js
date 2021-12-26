@@ -5,7 +5,7 @@ class buttonRole {
      * 
      * @param {Object} options 
      * @param {Discord.Guild} [options.guild]
-     * @param {[Discord.Role]} [options.roles]
+     * @param {Discord.Role[]} [options.roles]
      * @param {Discord.Client} [options.client]
      */
     constructor(options){

@@ -19,9 +19,12 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.20.0",
+    "canvas": "^2.8.0",
     "chalk": "^4.1.1",
     "cheerio": "^1.0.0-rc.10",
-    "discord.js": "^13.0.0-dev.4886ae2.1627085022",
+    "discord.js": "^13.1.0",
+    "lodash": "^4.17.21",
+    "ms": "^2.1.2",
     "node-fetch": "^2.6.1",
     "request": "^2.88.2",
     "string-width": "^5.0.0"

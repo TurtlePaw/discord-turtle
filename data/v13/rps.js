@@ -53,7 +53,7 @@ class rps {
     }
     /**
      * Set the command message
-     * @param {Discord.Message} message The Discord message
+     * @param {Discord.CommandInteraction} message The Discord message
      */
     setMessage(message){
         if(!message) throw new TypeError('DT Error: Missing arguments message')
@@ -123,8 +123,11 @@ class rps {
         if(!this.message) throw new TypeError('DT Error: Missing arguments message')
         this._render();
         const message = this.message;
+
+        message.deferReply()
+
         const rpsopt = ['rock', 'paper', 'scissors'];
-        const m = await message.channel.send({ content: this.loadm });
+        await message.reply({ content: this.loadm });
         const correct_a = rpsopt[Math.floor(Math.random() * rpsopt.length)]
         const b1 = new Discord.MessageButton()
         .setCustomId('rock')
@@ -152,11 +155,11 @@ class rps {
         const ENDED_EMBED = new Discord.MessageEmbed()
         .setTitle('Time has ended!')
         .setColor('RED')
-        m.edit({ content: 'Choose your sign!', components: [baction_row] });
+        message.editReply({ content: 'Choose your sign!', components: [baction_row] });
         const filter = i => i.user.id = message.author.id;
         let won;
         let tie;
-        m.awaitMessageComponent({ filter, time: 60000 })
+        message.channel.awaitMessageComponent({ filter, time: 60000 })
         .then(async i => {
             const correct_c = this._checkWinner(i.customId, correct_a);
             let whatWon = String;
@@ -175,7 +178,7 @@ class rps {
                 i.followUp({ content: this.lost, components: [] });
                 won = false
             }
-        }).catch(( )=>{ m.edit({ embeds: [ENDED_EMBED], components: [] })})
+        }).catch(( )=>{ message.editReply({ embeds: [ENDED_EMBED], components: [] })})
         return {
             won: won,
             tie: tie,

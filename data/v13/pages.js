@@ -10,7 +10,7 @@ class pages {
      * @param {[Discord.MessageEmbed]} [options.pages] The embed pages
      * @param {Array} [options.emoji] The emojis must be an emoji id
      * @param {Number} [options.time] The time for the collector
-     * @param {Discord.Message} [options.message] The message
+     * @param {Discord.CommandInteraction} [options.message] The message
      * @param {Discord.MessageButtonStyle} [options.style] The button style
      * @returns Promise<void>
      */
@@ -48,7 +48,7 @@ class pages {
      * @returns Pages
      */
     buildAll() {
-        this.options.message.channel.send({ embeds: this.options.pages });
+        this.message.reply({ embeds: this.options.pages });
         return this.options.pages
     }
     /**
@@ -109,7 +109,7 @@ class pages {
         const buttons = new MessageActionRow()
         .addComponents(button_1, button_2, button_3);
 
-        const m = await this.message.channel.send({ embeds: [this.options.pages[0]], components: [buttons] });
+        await this.message.reply({ embeds: [this.options.pages[0]], components: [buttons] });
 
         const filter = i => i.user.id === this.message.author.id;
 
@@ -135,11 +135,10 @@ class pages {
                 }
             } else if(i.customId === 'page_delete'){
                 req = true;
-                return m.delete()
+                return this.message.deleteReply()
             }
             if(req === true){
-            m.edit({ embeds: [this.options.pages[currentPage]], components: [buttons] }).catch(( )=>{ });
-            i.deferUpdate();
+                i.update({ embeds: [this.options.pages[currentPage]], components: [buttons] }).catch(( )=>{ });
             }
         })
     }

@@ -1,5 +1,5 @@
 # Turtle Client
-Discord webhook client that sends a [random](/turtle-api?id=random) turtle every so often.
+Discord webhook client that sends a [random](/docs/turtle-api?id=random) turtle every so often.
 
 ## Methods
 ### .setWebhook

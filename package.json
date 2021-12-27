@@ -1,25 +1,24 @@
 {
-  "name": "discord-turtle",
+  "name": "turtle-api",
   "version": "2.0.1",
-  "description": "",
-  "main": "index.js",
+  "description": "#####  **You can also just call the package to get a random turtle image.**",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "discord-turtle",
     "turtle",
-    "discord",
-    "d.js",
-    "discord-docs",
-    "discord.js-docs",
-    "discord-bot"
+    "turtles"
   ],
-  "author": "Turtlepaw#0001",
+  "author": "Turtlepaw",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.20.0",
-    "discord.js": "^13.0.0-dev.755c180.1625659372",
-    "node-fetch": "^2.6.1"
-  }
+    "discord.js": "^13.4.0",
+    "docsify-cli": "^4.4.3"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "devDependencies": {}
 }

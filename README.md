@@ -1,91 +1,27 @@
-<div align="center">
-  <p>
-    <a href="https://nodei.co/npm/discord-turtle
-/"><img src="https://nodei.co/npm/discord-turtle.png?downloads=true&stars=true" alt="NPM Info" /></a>
-  </p>
-</div>
+<center><img src="/turtle_banner.svg"></center>
 
-<div align="center">
- <p>For errors and questions join <a href="https://discord.gg/5Wutrs8s4s">our support server</a></p>
-</div>
+##### **Turtle API is an package that gets a random turtle picture and posts it to your server!**
 
-## Table Of Content
+#####  **You can also just call the package to get a random turtle image.**
 
-- [Installation](#installation)
-- [Examples](#examples)
-- [Discord.js Docs](#discordjs-docs)
-- [Timestamps](#Timestamps)
-- [Links](#link)
-- [Magik](#magik)
-- [Pages](#pages)
-- [Support Server](https://discord.gg/5Wutrs8s4s)
+### Note
+⚠️ Turtle API used to be called "Discord-turtle" and used as a util package for discord like playing games. Discord Turtle had no use after I created a new and better package called [Discord.js-util](https://www.npmjs.com/package/discord.js-util) and [Discord.jsh](https://www.npmjs.com/package/discordjsh) so I changed this package into a turtle API!
 
-# Installation
+⚠️ You can still find the old package in the "old" branch!
+# Install
+```shell
+# NPM
+npm i turtle-api
+# Yarn
+yarn add turtle-api
 ```
-$ npm i discord-turtle
-```
-Make sure you have `discord.js` installed!
+# Docs
+You can find the docs [here](https://d.trtle.xyz/#/) (NPM) or on the sidebar. (Site)
 
-# Examples
-## Discord.js Docs
-```js
-    const Discord = require("discord.js");
-    const dt = require('discord-turtle');
-
-    const docs = await dt.docs('MessageEmbed');
-    const docsembed = new Discord.MessageEmbed(docs);
-    message.channel.send(docsembed);
-```
-![D.js Docs Gif](https://cdn.tixte.com/uploads/turtlepaw.is-from.space/kqabjya4e9a.gif)
-
-## Timestamps
-```js
-const Discord = require("discord.js");
-const dt = require('discord-turtle');
-
-//Converting to timestamp
-const time = await dt.timestamp(1625021700);
-//Sending the time
-message.channel.send(time);
-```
-![Timestamps Gif](https://cdn.tixte.com/uploads/turtlepaw.is-from.space/kqiw9knk59a.gif)
-## Link
-__You must be on Discord.js V13__
-```js
-new dt.linkbutton({
-    link: 'https://discord.com',
-    label: 'Discord.com'
-}).create().then(button => {
-   <channel>.send({ content: 'Hey!', components: [[button]] })
-})
-```
-![Link Buttons](https://cdn.tixte.com/uploads/turtlepaw.is-from.space/kr5kr47b99a.png)
-## Magik
-```js
-const dt = require('discord-turtle');
-new dt.magik({
-    mentions: <message>.mentions,
-    author: <message>.author
-}).create().then(button => {
-    <channel>.send({ embeds: [button.embed.setColor('BLURPLE')] })
-})
-```
-![Magik](https://cdn.tixte.com/uploads/turtlepaw.is-from.space/kr5kse1vx9a.png)
-## Pages
-__You must be on Discord.js V13__
-```js
-const Discord = require("discord.js");
-const dt = require('discord-turtle');
-const page_1 = new Discord.MessageEmbed()
-.setTitle('Page 1')
-const page_2 = new Discord.MessageEmbed()
-.setTitle('Page 2')
-new dt.pages({
-    pages: [page_1, page_2],
-    emoji: ['emojiid', 'emojiid', 'emojiid'],
-    message: message,
-    style: 'SECONDARY'
-}).build();
-```
-![Pages](https://cdn.tixte.com/uploads/turtlepaw.is-from.space/kr5kkhrz19a.gif)
-# **For errors and questions join [our support server](https://discord.gg/5Wutrs8s4s)**
+<!--- NPM Ignore --->
+## Credits
+####  Turtlepaw:
+<img src="Assets/Discord_B.svg" style="width: 15px"> [Discord](https://discord.com/users/820465204411236362)<br>
+<img src="Assets/twitter.svg" style="width: 15px"> [Twitter](https://twitter.com/turtlepaw_sims)<br>
+<img src="Assets/github.svg" style="width: 15px"> [Github](https://github.com/TurtlePaw/)<br>
+<img src="Assets/npm.svg" style="width: 15px"> [NPM](https://npmjs.com/~turtlepaw)

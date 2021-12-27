@@ -1,0 +1,5 @@
+* [Home](/)
+* * [Install](/?id=install)
+* [Docs](/?id=docs)
+* * [Turtle API](/docs/turtle-api)
+* * [Turtle Client (Discord)](/docs/client)

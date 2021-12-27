@@ -21,7 +21,7 @@ You can find the docs [here](https://d.trtle.xyz/#/) (NPM) or on the sidebar. (S
 <!--- NPM Ignore --->
 ## Credits
 ####  Turtlepaw:
-<img src="Assets/Discord_B.svg" style="width: 15px"> [Discord](https://discord.com/users/820465204411236362)<br>
-<img src="Assets/twitter.svg" style="width: 15px"> [Twitter](https://twitter.com/turtlepaw_sims)<br>
-<img src="Assets/github.svg" style="width: 15px"> [Github](https://github.com/TurtlePaw/)<br>
-<img src="Assets/npm.svg" style="width: 15px"> [NPM](https://npmjs.com/~turtlepaw)
+<img src="https://jsh.trtle.xyz/Assets/Discord_B.svg" style="width: 15px"> [Discord](https://discord.com/users/820465204411236362)<br>
+<img src="https://jsh.trtle.xyz/Assets/twitter.svg" style="width: 15px"> [Twitter](https://twitter.com/turtlepaw_sims)<br>
+<img src="https://jsh.trtle.xyz/Assets/github.svg" style="width: 15px"> [Github](https://github.com/TurtlePaw/)<br>
+<img src="https://jsh.trtle.xyz/Assets/npm.svg" style="width: 15px"> [NPM](https://npmjs.com/~turtlepaw)

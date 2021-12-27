@@ -1,6 +1,6 @@
 {
   "name": "turtle-api",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "#####  **You can also just call the package to get a random turtle image.**",
   "main": "src/index.js",
   "scripts": {

@@ -11,6 +11,14 @@
     "turtle",
     "turtles"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TurtlePaw/discord-turtle.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TurtlePaw/discord-turtle/issues"
+  },
+  "homepage": "https://d.trtle.xyz/",
   "author": "Turtlepaw",
   "license": "ISC",
   "dependencies": {
